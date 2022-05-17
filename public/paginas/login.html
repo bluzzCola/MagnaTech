@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnatech Login</title>
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+
+    <div class="header">
+		<div class="container">
+			<a href="index.html">
+                <img src="Untitled.png">
+			</a>
+			
+
+			<ul class="navbar">
+				<li><a class="nav-itens" href="index.html">Inicio</a></li>
+				
+				<li><a class="nav-itens" href="agendamento.html">Agendamento</a></li>
+			</ul>
+			<a class="nav-btn" href="calculadora.html">Simulador Financeiro</a>
+
+			<div class="login">
+				<ul class="usuario">
+					<li> <a class="nav-itens nav-item-ativo" href="login.html">Login</a></li>
+					|
+					<li> <a class="nav-itens" href="cadastro.html">Cadastro</a> </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+    <!-- termino do header -->
+
+    <!-- começo do banner -->
+
+
+    <h2 class="titulo3" style="width: 30%; margin-left: 35%;">Bem-vindo de volta!</h2>
+
+    <div class="card" style="width: 30%; text-align: center;">
+
+        <div class="div2">
+
+            <h4 class="texto2">Email</h4> 
+            <input type="text" id="in_email" placeholder="Insira um Email" class="input">
+            
+            <h4 class="texto2">Senha</h4>
+            <input type="password" id="in_password" placeholder="Insira uma Senha" class="input">
+            <br>
+            <button class="btn" onclick="entrar()" style="margin-left: 0px;">Entrar</button>
+            <p><a href="dashboard/dashboard.html">/*ir para página pós-login*/</a></p>
+        </div>
+    </div>
+    
+    <div class="baseboard">
+		<footer>
+			<div class="container">
+				<div class="footer-info">
+					<div class="footer-column">
+						<h3>Copyright © 2022 | MagnaTech</h3>
+					</div>
+					<div class="footer-column">
+						<h3>Documentos</h3>
+						<p>Termos de Uso e Serviço</p>
+						<p>Política de Privacidade</p>
+					</div>
+					<div class="footer-column">
+						<h3>Contatos</h3>
+						<p>E-mail: <a href="#">magnatech2022@email.com</a></p>
+						<p>Telefone: 98765-34321</p>
+					</div>
+					<div class="footer-column">
+						<h3>Redes Sociais</h3>
+						<div class="footer-social">
+							<a class="social-icon" href="#"><img src="whatsapp_icon.png" width="30px"></a>
+							<a class="social-icon" href="#"><img src="facebook_icon.png" width="30px"></a>
+							<a class="social-icon" href="#"><img src="instagram_icon.png" width="30px"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<div class="baseboard-inferior">
+			<div class="div-base" style="margin-top: -25px; margin-right: -180px; margin-left: 10px;">
+				<img src="PARCEIROS.png" >
+			</div>
+			<div class="div-base">
+
+				<img src="d1sFhNj (1) 1.png">
+			</div>
+			<div class="div-base">
+
+				<img src="image 2.png">
+			</div>
+			
+			<div class="div-base">
+
+				<img src="image 3.png">
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>
+
+<script>
+    function entrar() {
+        
+
+        var emailVar = in_email.value;
+        var senhaVar = in_password.value;
+
+        if (emailVar == "" || senhaVar == "") {
+           alert ('Preencha todos os campos')
+            
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function(resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function() {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function(erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+</script>
