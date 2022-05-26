@@ -14,136 +14,117 @@
     <div class="header">
 		<div class="container">
 			<a href="index.html">
-                <img src="../imagens/Untitled.png">
+				<img src="../img/logo.png">
 			</a>
-			
 
 			<ul class="navbar">
-				<li><a class="nav-itens" href="index.html">Inicio</a></li>
+				<div class="nav-center">
+					<li><a class="nav-itens" href="index.html">Inicio</a></li>
+					<li><a class="nav-itens" href="agendamento.html">Agendamento</a></li>
+				</div>
 				
-				<li><a class="nav-itens" href="agendamento.html">Agendamento</a></li>
-			</ul>
-			<a class="nav-btn" href="calculadora.html">Simulador Financeiro</a>
-
-			<div class="login">
-				<ul class="usuario">
+				<li><a class="nav-btn" href="calculadora.html">Simulador Financeiro</a></li>
+				
+				<div class="nav-login">
 					<li> <a class="nav-itens" href="login.html">Login</a></li>
 					|
 					<li> <a class="nav-itens nav-item-ativo" href="cadastro.html">Cadastro</a> </li>
-				</ul>
-			</div>
+				</div>
+			</ul>
 		</div>
 	</div>
 
        
 
-            <!--Inicio do card-->
-            <h2 class="titulo3">Realize seu cadastro!</h2>
+    <!--Inicio do card-->
 
-            <div class="card2">
+    <div class="card">
+        <div class="card-title">Realize seu cadastro</div>
+        <div class="card-form">
+            <div class="card-box">
+                <label for="in_nome" class="card-label">Nome da Empresa</label>
+                <input type="text" id="in_nome" placeholder="Insira um nome válido">
 
-                
-                <div class="div1">
-                    <span class="inp-cadastro">
-                        <h4 class="texto2">Nome da Empresa</h4>
-                        <input type="text" id="in_nome" placeholder="Insira um nome válido" class="input">
-                    </span>
+                <label for="in_email" class="card-label">Email</label>
+                <input type="email" id="in_email" placeholder="Insira um Email">
 
-                    <span class="inp-cadastro">
-                        <h4 class="texto2">Email</h4>
-                        <input type="email" id="in_email" placeholder="Insira um Email" class="input">
-                    </span>
+                <label for="in_cnpj" class="card-label">CNPJ</label>
+                <input type="text" id="in_cnpj" placeholder="Insira o CNPJ">
 
-                    <span class="inp-cadastro">
-                        <h4 class="texto2">CNPJ</h4>
-                        <input type="text" id="in_cnpj" placeholder="Insira o CNPJ" class="input">
-                    </span>
-
-                    <span class="inp-cadastro">
-                        <h4 class="texto2">Razão Social</h4>
-                        <input type="text" id="in_razaoSocial" placeholder="Insira uma Razão social" class="input">
-                    </span>
-                </div>
-                   
-                    
-                
-
-                <div class="div2" style="display: flex; flex-direction: column; justify-content: center;">
-                    <span class="inp-cadastro">
-                        <h4 class="texto2">Senha</h4>
-                        <input type="password" id="in_senha" placeholder="Insira a senha" class="input">
-                    </span>
-                    <span class="inp-cadastro">
-                        <h4 class="texto2">Confirmar senha</h4>
-                        <input type="password" id="in_senhaConfirm" placeholder="Confirme a senha" class="input">
-                    </span>
-
-                    <br>
-                    <br>
-                    <br>
-                    <button class="btn" style="" onclick="cadastrar()">Cadastrar</button> 
-                    
-                </div>
-                
-
+                <label for="in_razaoSocial" class="card-label">Razão Social</label>
+                <input type="text" id="in_razaoSocial" placeholder="Insira uma Razão social">
             </div>
             
+            <div class="vertical-line" style="height: 500px;"></div>
+            
+            <div class="card-box">
 
-            <div id="aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif">
+                <label for="in_senha" class="card-label">Senha</label>
+                <input type="password" id="in_senha" placeholder="Insira a senha">
+
+                <label for="in_senhaConfirm" class="card-label">Confirmar Senha</label>
+                <input type="password" id="in_senhaConfirm" placeholder="Confirme a senha">
+
+                <button class="btn" onclick="cadastrar()">Cadastrar</button>
+
             </div>
+        </div>
+    </div>
 
-            <div id="div_erros_login">
+    <div id="aguardar" class="loading-div">
+        <img src="./assets/circle-loading.gif" id="loading-gif">
+    </div>
 
-            </div>
+    <div id="div_erros_login">
 
-            <div class="baseboard">
-                <footer>
-                    <div class="container">
-                        <div class="footer-info">
-                            <div class="footer-column">
-                                <h3>Copyright © 2022 | MagnaTech</h3>
-                            </div>
-                            <div class="footer-column">
-                                <h3>Documentos</h3>
-                                <p>Termos de Uso e Serviço</p>
-                                <p>Política de Privacidade</p>
-                            </div>
-                            <div class="footer-column">
-                                <h3>Contatos</h3>
-                                <p>E-mail: <a href="#">magnatech2022@email.com</a></p>
-                                <p>Telefone: 98765-34321</p>
-                            </div>
-                            <div class="footer-column">
-                                <h3>Redes Sociais</h3>
-                                <div class="footer-social">
-                                    <a class="social-icon" href="#"><img src="whatsapp_icon.png" width="30px"></a>
-                                    <a class="social-icon" href="#"><img src="facebook_icon.png" width="30px"></a>
-                                    <a class="social-icon" href="#"><img src="instagram_icon.png" width="30px"></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-                <div class="baseboard-inferior">
-                    <div class="div-base" style="margin-top: -25px; margin-right: -180px; margin-left: 10px;">
-                        <img src="PARCEIROS.png" >
-                    </div>
-                    <div class="div-base">
-        
-                        <img src="d1sFhNj (1) 1.png">
-                    </div>
-                    <div class="div-base">
-        
-                        <img src="image 2.png">
-                    </div>
-                    
-                    <div class="div-base">
-        
-                        <img src="image 3.png">
-                    </div>
-                </div>
-            </div>
+    </div>
+
+    <div class="baseboard">
+		<div class="baseboard-superior">
+			<div class="container">
+				<div class="baseboard-info">
+					<div class="baseboard-column">
+						<h3>Copyright © 2022 | MagnaTech</h3>
+					</div>
+					<div class="baseboard-column">
+						<h3>Documentos</h3>
+						<p>Termos de Uso e Serviço</p>
+						<p>Política de Privacidade</p>
+					</div>
+					<div class="baseboard-column">
+						<h3>Contatos</h3>
+						<p>E-mail: <a href="#">magnatech2022@email.com</a></p>
+						<p>Telefone: 98765-34321</p>
+					</div>
+					<div class="baseboard-column">
+						<h3>Redes Sociais</h3>
+						<div class="baseboard-social">
+							<a class="social-icon" href="#"><img src="../img/icon_whatsapp.png" width="30px"></a>
+							<a class="social-icon" href="#"><img src="../img/icon_facebook.png" width="30px"></a>
+							<a class="social-icon" href="#"><img src="../img/icon_instagram.png" width="30px"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="baseboard-inferior">
+			<div class="baseboard-column">
+				<img src="../img/PARCEIROS.png" >
+			</div>
+
+			<div class="baseboard-column">
+				<img src="../img/parceiro1.png">
+			</div>
+
+			<div class="baseboard-column">
+				<img src="../img/parceiro2.png">
+			</div>
+			
+			<div class="baseboard-column">
+				<img src="../img/parceiro3.png">
+			</div>
+		</div>
+	</div>
        
 </body>
 
