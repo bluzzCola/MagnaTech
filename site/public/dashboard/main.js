@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const SERIAL_BAUD_RATE = 9600;
 const SERVIDOR_PORTA = 3000;
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 const serial = async (
     valoresDht11Umidade,
@@ -14,9 +14,9 @@ const serial = async (
         {
             host: 'localhost',
             port: 3306,
-            user: 'root',
-            password: 'ptrk5612',
-            database: 'metricas'
+            user: 'aluno',
+            password: 'sptech',
+            database: 'magnatech'
         }
     ).promise();
 

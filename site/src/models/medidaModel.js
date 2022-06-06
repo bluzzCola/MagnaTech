@@ -6,8 +6,8 @@ function buscarUltimasMedidas(idCaptura, limite_linhas) {
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {
         instrucaoSql = `select top ${limite_linhas}
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,  
+        temperatura, 
+        umidade,  
                         momento,
                         CONVERT(varchar, momento, 108) as momento_grafico
                     from captura
@@ -16,7 +16,7 @@ function buscarUltimasMedidas(idCaptura, limite_linhas) {
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-        instrucaoSql = `select idCaptura, fkSensor, temperatura, umidade, momento from captura;`;
+        instrucaoSql = `select idCaptura, fkSensor, temperatura, umidade, momento from captura where fkSensor = 1 limit ${limite_linhas};`;
 
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");

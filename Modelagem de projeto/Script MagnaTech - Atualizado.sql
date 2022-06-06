@@ -79,3 +79,5 @@ CREATE TABLE agendamento (
 	complemento VARCHAR(40),
 	PRIMARY KEY (idAgendamento)
 )AUTO_INCREMENT= 10000;
+
+INSERT INTO arduino VALUES (1, null, null, '101');
