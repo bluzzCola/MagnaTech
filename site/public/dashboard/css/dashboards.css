@@ -152,13 +152,13 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border-right: 3px solid #32b9cd;
-  background-color: #212124;
+  border-right: 3px solid #ffffff;
+  background-color: #db5e43;
   /* border: 3px solid pink; */
 }
 
 .dash-header {
-  background-color: #212124;
+  background-color: #db5e43;
 }
 
 .dash {
@@ -166,7 +166,7 @@ body {
   position: relative;
   top: 0;
   left: 25%;
-  background-color: #161618;
+  background-color: #e5dad0;
 
   /* width: 75%;
     display: flex;
@@ -280,7 +280,7 @@ body {
 }
 
 .tituloGraficos {
-  color: rgb(216, 216, 216);
+  color:rgb(244, 99, 69);
   display: flex;
   justify-content: center;
 }
@@ -291,7 +291,7 @@ body {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: #e6005a;
+  color: rgb(244, 99, 69);
   background-color: white;
   margin: 5px;
   border-radius: 3px;
@@ -299,8 +299,8 @@ body {
 
 .btn-nav {
   width: 40%;
-  color: white;
-  background-color: #e6005a;
+  color: #e5dad0;
+  background-color: #e3b062;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
@@ -308,15 +308,14 @@ body {
 
 .btn-nav-white {
   width: 40%;
-  background-color: white;
-  border: 3px solid #e6005a;
+  background-color: #e3b062;
   border-radius: 5px;
   text-align: center;
   padding: 2% 5%;
 }
 
 .btn-nav-white h3 {
-  color: #e6005a;
+  color: #e5dad0;
   padding: 0;
   margin: 0;
 }
@@ -331,8 +330,8 @@ body {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #32b9cd;
-  color: white;
+  background-color:#e3b062;
+  color:#e5dad0;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;

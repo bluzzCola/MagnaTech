@@ -11,12 +11,14 @@ function buscarUltimasMedidas(idCaptura, limite_linhas) {
                         momento,
                         CONVERT(varchar, momento, 108) as momento_grafico
                     from captura
-                    where fk_aquario = ${idCaptura}
+                    where fk_aquario = 1
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
 
-        instrucaoSql = `select idCaptura, fkSensor, temperatura, umidade, momento from captura where fkSensor = 1 limit ${limite_linhas};`;
+        instrucaoSql = `select idCaptura, fkSensor, temperatura, umidade, momento 
+        from captura 
+        where fkSensor = 1 limit ${limite_linhas};`;
 
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
@@ -46,7 +48,7 @@ function buscarMedidasEmTempoReal(idAquario) {
         umidade,
                         DATE_FORMAT(momento,'%H:%i:%s') as momento, 
                         fkSensor
-                        from captura where fkSensor = ${idAquario} 
+                        from captura where fkSensor = 1 
                     order by idCaptura desc limit 1`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
