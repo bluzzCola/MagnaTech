@@ -81,3 +81,16 @@ CREATE TABLE agendamento (
 )AUTO_INCREMENT= 10000;
 
 INSERT INTO arduino VALUES (1, null, null, '101');
+
+/* SQL Server */
+
+CREATE TABLE Captura (
+	idCaptura INT IDENTITY(1,1),
+	fkSensor INT,
+	FOREIGN KEY (fkSensor) 
+		REFERENCES arduino(idSensor),
+	PRIMARY KEY (idCaptura, fkSensor),
+	umidade DECIMAL(4,2),
+	temperatura DECIMAL(4,2),
+	momento DATETIME2(0)
+);

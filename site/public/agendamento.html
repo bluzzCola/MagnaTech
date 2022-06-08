@@ -183,7 +183,18 @@
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
             return false;
+
+        } else if ( cnpjVar != 14) {
+
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "CNPJ inválido";    
+			
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000)
         }
+
+
         // Enviando o valor da nova input
         fetch("/usuarios/agendar", {
             method: "POST",
