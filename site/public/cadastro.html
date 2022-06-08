@@ -156,7 +156,7 @@
             mensagem_erro.innerHTML = "Preencha todos os campos!";
 
             return false;
-        } else if ( cnpjVar != 14) {
+        } else if ( cnpjVar.length != 14) {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "CNPJ inválido";    
             return false;

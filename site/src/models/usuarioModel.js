@@ -31,13 +31,13 @@ function cadastrar(nome, razao, cnpj, email, senha) {
     return database.executar(instrucao);
 }
 
-function agendar(id, nomeRep,telefone, email, data, nomeEmp, cnpj, rua, bairro, complemento) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", id, nomeRep,telefone, email, data, nomeEmp, cnpj, rua, bairro, complemento);
+function agendar(nomeRep,telefone, email, data, nomeEmp, cnpj, rua, bairro, complemento) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeRep,telefone, email, data, nomeEmp, cnpj, rua, bairro, complemento);
 
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-        INSERT INTO agendamento (fkFazenda, nomeRepresentante, telefone, email, agendamentoData, nomeEmpresa, cnpj, rua, bairro, complemento) VALUES ('${id}', '${nomeRep}', ${telefone}, '${email}', '${data}', '${nomeEmp}', ${cnpj}, '${rua}', '${bairro}', '${complemento}');
+        INSERT INTO agendamento (nomeRepresentante, telefone, email, agendamentoData, nomeEmpresa, cnpj, rua, bairro, complemento) VALUES ('${nomeRep}', ${telefone}, '${email}', '${data}', '${nomeEmp}', ${cnpj}, '${rua}', '${bairro}', '${complemento}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);

@@ -61,8 +61,8 @@ const serial = async (
 
                 // Este insert irá inserir os dados na tabela "medida" -> altere se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 >> você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `'INSERT INTO captura (fkSensor, umidade, temperatura, momento) VALUES (1, ?, ?, getdate())',
-                [dht11Umidade, dht11Temperatura]`
+                sqlquery = `INSERT INTO captura (fkSensor, umidade, temperatura, momento) VALUES (1,${dht11Umidade}, ${dht11Temperatura}, getdate())`
+            
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 const connStr = "Server=magnatech.database.windows.net;Database=MagnaTech;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
 

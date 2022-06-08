@@ -167,7 +167,6 @@
 
 	function enviarInfo() {
 
-		var idVar = sessionStorage.ID_USUARIO;
 		var representanteVar = in_representante.value;
         var emailVar = in_email.value;
         var telefoneVar = in_telefone.value;
@@ -184,7 +183,7 @@
 
             return false;
 
-        } else if ( cnpjVar != 14) {
+        } else if ( cnpjVar.length != 14) {
 
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "CNPJ inválido";    
@@ -204,7 +203,6 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-				idServer: idVar,
                 representanteServer: representanteVar,
                 emailServer: emailVar,
                 telefoneServer: telefoneVar,
@@ -242,7 +240,8 @@
         return false;
     }
 	
-
-
+	function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>

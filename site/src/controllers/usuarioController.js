@@ -102,7 +102,6 @@ function cadastrar(req, res) {
 
 function agendar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo agendamento.html
-    var id = req.body.idServer;
     var nomeRep = req.body.representanteServer;
     var email = req.body.emailServer;
     var telefone = req.body.telefoneServer;
@@ -132,12 +131,10 @@ function agendar(req, res) {
         res.status(400).send("Sua senha está undefined!");
     } else if (complemento == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else if (id == undefined) {
-        res.status(400).send("Sua senha está undefined!");
-    } else 
+    } else
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.agendar(id, nomeRep,telefone, email, data, nomeEmp, cnpj, rua, bairro, complemento)
+        usuarioModel.agendar(nomeRep,telefone, email, data, nomeEmp, cnpj, rua, bairro, complemento)
             .then(
                 function(resultado) {
                     res.json(resultado);
